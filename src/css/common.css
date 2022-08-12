@@ -16,3 +16,46 @@ img {
   display: block;
   max-width: 100%;
 }
+
+input {
+  margin-left: 55px;
+  margin-bottom: 35px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  background-color: rgb(234, 217, 247);
+}
+button {
+  margin-left: 10px;
+  padding: 15px 15px;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 3px 3px 11px -2px rgba(193, 145, 225, 0.61);
+  background-color: rgb(199, 157, 216);
+  font-size: 26px;
+  cursor: pointer;
+}
+.timer {
+  display: flex;
+  margin-left: 55px;
+}
+
+.field {
+  padding: 25px 15px;
+  margin-right: 13px;
+  min-width: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+    background-color: rgba(182, 120, 240, 0.316);
+    backdrop-filter: blur(5px);
+}
+.value {
+  font-size: 32px;
+}
+.label {
+  font-size: 14px;
+}

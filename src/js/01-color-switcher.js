@@ -23,7 +23,7 @@ function changeColor() {
 
 function noColor() {
     clearInterval(timerId);
-    refs.body.style.backgroundColor = "transparent";
+    // refs.body.style.backgroundColor = "transparent";
     refs.btnStart.disabled = false;
 }
 

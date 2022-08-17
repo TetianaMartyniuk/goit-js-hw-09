@@ -24,24 +24,37 @@ const options = {
     onClose(selectedDates) {
         endDate = Date.parse(selectedDates);
         if (selectedDates[0] <= Date.now()) {
-            Notify.failure("Please choose a date in the future")
+          Notify.failure("Please choose a date in the future")
+          refs.btnStart.disabled = true;
             return
         } else {
+          if (selectedDates[0] >= Date.now())
+          {
             refs.btnStart.disabled = false;
-            refs.btnStart.addEventListener("click", timerStart)
+            refs.btnStart.addEventListener("click", timerStart);
+
+          }
+            
             }
   },
 };
 
 function timerStart() {
-    setInterval(() => {
-                    const deltaTime = endDate - Date.parse(new Date());
+    const intervalTimer = setInterval(() => {
+      const deltaTime = endDate - Date.parse(new Date());
+      if (deltaTime < 0) {
+    clearInterval(intervalTimer);
+    return
+  }
                     console.log(deltaTime);
                     changeTimer(convertMs(deltaTime));
-        }, 1000)
+    }, 1000)
+  
 }
 
 function changeTimer({ days, hours, minutes, seconds }) {
+  console.log(days);
+    
     refs.days.textContent = addLeadingZero(days);
     refs.hours.textContent = addLeadingZero(hours);
     refs.minutes.textContent = addLeadingZero(minutes);
